@@ -5,6 +5,23 @@ import Todos from './Todos';
 class App extends Component {
   state = {
     newTodo: "",
+    todos: [
+      {
+        id: 1,
+        isComplete: true,
+        message: "Buy a unicorn",
+      },
+      {
+        id: 2,
+        isComplete: false,
+        message: "Build a todo app in React",
+      },
+      {
+        id: 3,
+        isComplete: false,
+        message: "Celebrate!",
+      },
+    ],
   }
 
   addNewTodo = (message) => {
@@ -48,7 +65,7 @@ class App extends Component {
           <input id="toggle-all" className="toggle-all" type="checkbox" />
           <label htmlFor="toggle-all">Mark all as complete</label>
 
-          <Todos />
+          <Todos todos={this.state.todos} />
         </section>
 
         {/* This footer should hidden by default and shown when there are todos */}

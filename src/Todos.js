@@ -4,23 +4,7 @@ import Todo from './Todo';
 
 class Todos extends Component {
   render() {
-    const todos = [
-      {
-        id: 1,
-        isComplete: true,
-        message: "Buy a unicorn",
-      },
-      {
-        id: 2,
-        isComplete: false,
-        message: "Build a todo app in React",
-      },
-      {
-        id: 3,
-        isComplete: false,
-        message: "Celebrate!",
-      },
-    ];
+    const { todos } = this.props;
 
     return (
       <ul className="todo-list">
