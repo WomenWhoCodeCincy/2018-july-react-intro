@@ -7,10 +7,25 @@ class App extends Component {
     newTodo: "",
   }
 
+  addNewTodo = (message) => {
+    // How can I add a Todo without Todos in state?
+  }
+
+  clearNewTodo = () => {
+    this.setState({ newTodo: "" });
+  }
+
   updateNewTodo = (event) => {
     this.setState({
       newTodo: event.target.value,
     });
+  }
+
+  handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      this.addNewTodo(this.state.newTodo);
+      this.clearNewTodo();
+    }
   }
 
   render() {
@@ -24,6 +39,7 @@ class App extends Component {
             autoFocus
             value={this.state.newTodo}
             onChange={this.updateNewTodo}
+            onKeyDown={this.handleKeyDown}
           />
         </header>
 
