@@ -5,14 +5,17 @@ class Todos extends Component {
     const todos = [
       {
         id: 1,
+        isComplete: true,
         message: "Buy a unicorn",
       },
       {
         id: 2,
+        isComplete: false,
         message: "Build a todo app in React",
       },
       {
         id: 3,
+        isComplete: false,
         message: "Celebrate!",
       },
     ];
@@ -21,7 +24,7 @@ class Todos extends Component {
       <ul className="todo-list">
         {
           todos.map((todo) => (
-            <li key={todo.id}>
+            <li key={todo.id} className={todo.isComplete ? "completed" : "view"}>
               <div className="view">
                 <input className="toggle" type="checkbox" />
                 <label>{todo.message}</label>
