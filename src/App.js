@@ -5,6 +5,7 @@ import Todos from './Todos';
 class App extends Component {
   state = {
     newTodo: "",
+    nextTodoId: 4,
     todos: [
       {
         id: 1,
@@ -29,11 +30,12 @@ class App extends Component {
       todos: [
         ...this.state.todos,
         {
-          id: 4,
+          id: this.state.nextTodoId,
           isComplete: false,
           message,
         },
       ],
+      nextTodoId: this.state.nextTodoId + 1,
     });
   }
 
