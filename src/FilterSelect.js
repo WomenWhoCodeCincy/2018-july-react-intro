@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class FilterSelect extends Component {
+  handleChange = (filter) => () => {
+    this.props.onChange(filter);
+  }
+
   render() {
     const { filters, value } = this.props;
 
@@ -13,7 +17,7 @@ class FilterSelect extends Component {
 
             return (
               <li key={filter.name}>
-                <a className={buttonClasses}>{filter.name}</a>
+                <a className={buttonClasses} onClick={this.handleChange(filter)}>{filter.name}</a>
               </li>
             );
           })

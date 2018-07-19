@@ -86,6 +86,10 @@ class App extends Component {
     this.setState({ todos: updatedTodos });
   }
 
+  setSelectedFilter = (selectedFilter) => {
+    this.setState({ selectedFilter });
+  }
+
   render() {
     return (
       <section className="todoapp">
@@ -114,7 +118,11 @@ class App extends Component {
           {/* This should be `0 items left` by default */}
           <span className="todo-count"><strong>0</strong> item left</span>
 
-          <FilterSelect filters={FILTERS} value={this.state.selectedFilter} />
+          <FilterSelect
+            filters={FILTERS}
+            value={this.state.selectedFilter}
+            onChange={this.setSelectedFilter}
+          />
 
           {/* Hidden if no completed items are left ↓ */}
           <button className="clear-completed">Clear completed</button>
