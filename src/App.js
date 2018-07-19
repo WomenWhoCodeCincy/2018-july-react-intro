@@ -56,6 +56,22 @@ class App extends Component {
     }
   }
 
+  handleIsCompleteChanged = (todo) => (value) => {
+    const { todos } = this.state;
+    const todoIndex = todos.indexOf(todo);
+    const updatedTodo = {
+      ...todo,
+      isComplete: value,
+    };
+    const updatedTodos = [
+      ...todos.slice(0, todoIndex),
+      updatedTodo,
+      ...todos.slice(todoIndex + 1),
+    ];
+
+    this.setState({ todos: updatedTodos });
+  }
+
   render() {
     return (
       <section className="todoapp">
@@ -76,7 +92,7 @@ class App extends Component {
           <input id="toggle-all" className="toggle-all" type="checkbox" />
           <label htmlFor="toggle-all">Mark all as complete</label>
 
-          <Todos todos={this.state.todos} />
+          <Todos todos={this.state.todos} onIsCompleteChanged={this.handleIsCompleteChanged} />
         </section>
 
         {/* This footer should hidden by default and shown when there are todos */}

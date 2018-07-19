@@ -9,7 +9,13 @@ class Todos extends Component {
     return (
       <ul className="todo-list">
         {
-          todos.map((todo) => <Todo key={todo.id} todo={todo} />)
+          todos.map((todo) =>
+            <Todo
+              key={todo.id}
+              todo={todo}
+              onIsCompleteChanged={this.props.onIsCompleteChanged(todo)}
+            />
+          )
         }
       </ul>
     );
