@@ -6,12 +6,15 @@ import FilterSelect from './FilterSelect';
 export const FILTERS = [
   {
     name: "All",
+    filter: (todos) => todos,
   },
   {
     name: "Active",
+    filter: (todos) => todos.filter((todo) => !todo.isComplete),
   },
   {
     name: "Completed",
+    filter: (todos) => todos.filter((todo) => todo.isComplete),
   }
 ];
 
@@ -91,6 +94,9 @@ class App extends Component {
   }
 
   render() {
+    const { todos, selectedFilter } = this.state;
+    const todosToShow = selectedFilter.filter(todos);
+
     return (
       <section className="todoapp">
         <header className="header">
@@ -110,7 +116,7 @@ class App extends Component {
           <input id="toggle-all" className="toggle-all" type="checkbox" />
           <label htmlFor="toggle-all">Mark all as complete</label>
 
-          <Todos todos={this.state.todos} onIsCompleteChanged={this.handleIsCompleteChanged} />
+          <Todos todos={todosToShow} onIsCompleteChanged={this.handleIsCompleteChanged} />
         </section>
 
         {/* This footer should hidden by default and shown when there are todos */}
