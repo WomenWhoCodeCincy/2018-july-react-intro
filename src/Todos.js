@@ -3,9 +3,18 @@ import React, { Component } from 'react';
 class Todos extends Component {
   render() {
     const todos = [
-      { id: 1 },
-      { id: 2 },
-      { id: 3 },
+      {
+        id: 1,
+        message: "Buy a unicorn",
+      },
+      {
+        id: 2,
+        message: "Build a todo app in React",
+      },
+      {
+        id: 3,
+        message: "Celebrate!",
+      },
     ];
 
     return (
@@ -15,7 +24,7 @@ class Todos extends Component {
             <li key={todo.id}>
               <div className="view">
                 <input className="toggle" type="checkbox" />
-                <label>Buy a unicorn</label>
+                <label>{todo.message}</label>
                 <button className="destroy"></button>
               </div>
               <input className="edit" value="Rule the web" />
