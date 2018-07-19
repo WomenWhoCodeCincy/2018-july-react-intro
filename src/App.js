@@ -7,6 +7,12 @@ class App extends Component {
     newTodo: "",
   }
 
+  updateNewTodo = (event) => {
+    this.setState({
+      newTodo: event.target.value,
+    });
+  }
+
   render() {
     return (
       <section className="todoapp">
@@ -17,6 +23,7 @@ class App extends Component {
             placeholder="What needs to be done?"
             autoFocus
             value={this.state.newTodo}
+            onChange={this.updateNewTodo}
           />
         </header>
 
