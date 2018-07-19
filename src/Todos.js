@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 class Todos extends Component {
   render() {
     const todos = [
-      {},
-      {},
-      {},
+      { id: 1 },
+      { id: 2 },
+      { id: 3 },
     ];
 
     return (
       <ul className="todo-list">
         {
           todos.map((todo) => (
-            <li>
+            <li key={todo.id}>
               <div className="view">
                 <input className="toggle" type="checkbox" />
                 <label>Buy a unicorn</label>
