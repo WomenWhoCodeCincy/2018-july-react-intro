@@ -3,6 +3,18 @@ import React, { Component } from 'react';
 import Todos from './Todos';
 import FilterSelect from './FilterSelect';
 
+export const FILTERS = [
+  {
+    name: "All",
+  },
+  {
+    name: "Active",
+  },
+  {
+    name: "Completed",
+  }
+];
+
 class App extends Component {
   state = {
     newTodo: "",
@@ -101,7 +113,7 @@ class App extends Component {
           {/* This should be `0 items left` by default */}
           <span className="todo-count"><strong>0</strong> item left</span>
 
-          <FilterSelect />
+          <FilterSelect filters={FILTERS} />
 
           {/* Hidden if no completed items are left ↓ */}
           <button className="clear-completed">Clear completed</button>
