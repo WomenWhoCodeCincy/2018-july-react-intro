@@ -25,7 +25,16 @@ class App extends Component {
   }
 
   addNewTodo = (message) => {
-    // How can I add a Todo without Todos in state?
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        {
+          id: 4,
+          isComplete: false,
+          message,
+        },
+      ],
+    });
   }
 
   clearNewTodo = () => {
