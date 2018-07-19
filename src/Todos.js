@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Todo from './Todo';
+
 class Todos extends Component {
   render() {
     const todos = [
@@ -23,16 +25,7 @@ class Todos extends Component {
     return (
       <ul className="todo-list">
         {
-          todos.map((todo) => (
-            <li key={todo.id} className={todo.isComplete ? "completed" : "view"}>
-              <div className="view">
-                <input className="toggle" type="checkbox" />
-                <label>{todo.message}</label>
-                <button className="destroy"></button>
-              </div>
-              <input className="edit" value="Rule the web" />
-            </li>
-          ))
+          todos.map((todo) => <Todo key={todo.id} todo={todo} />)
         }
       </ul>
     );
