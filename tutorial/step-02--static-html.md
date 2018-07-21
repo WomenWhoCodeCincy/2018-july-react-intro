@@ -1,6 +1,8 @@
 # Step 2 - Displaying Static HTML
 
-- [Part 1 - Removing extra files from `create-react-app`](#part-1)
+- [Part 1 - Removing extra files from `create-react-app`](#part-1---removing-extra-files-from-create-react-app)
+- [Part 2 - Adding TodoMVC assests](#part-2---adding-todomvc-assests)
+- [Part 3 - Putting the static HTML into our app](#part-3---putting-the-static-html-into-our-app)
 
 ## Part 1 - Removing extra files from `create-react-app`
 
