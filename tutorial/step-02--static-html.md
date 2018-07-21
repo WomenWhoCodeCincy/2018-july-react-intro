@@ -164,3 +164,11 @@ So that you can adapt plain HTML in the future, here are the changes that I had 
 After you are done with this step, the app should look like this:
 
 ![Screnshot of the application after step 2](screenshots/step02--01.png)
+
+---
+
+### Changes made in Step 2
+- [All Changes](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/compare/before-2...after-2) 
+- Part 1: [8dfc2f3](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/8dfc2f33c71e13821cd806cdb24e66cdf1fa7831)
+- Part 2: [a1d1423](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/a1d1423f42399deb7e1fead0ecec395ab655f292)
+- Part 3: [a839173](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/a839173ff7c617b68bb7803649b204dfea9b6a15)

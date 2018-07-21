@@ -52,3 +52,8 @@ todomvc-react
 ```
 
 As a final step while your web browser has the project open (http://localhost:3000), edit the text in `src/App.js` from "Welcome to React" to a phrase of your choice. Your changes should appear in the browser automatically without refreshing! This is called "hot-reloading", which is a feature built-into `create-react-app`. It's much nicer than the days where we had to refresh the browser, it was like living in the stone age!
+
+---
+
+### Changes made in Step 1
+- All changes: [6514bb3](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/6514bb36a4969ea08222d8f517c9143c0ff575f9) 
