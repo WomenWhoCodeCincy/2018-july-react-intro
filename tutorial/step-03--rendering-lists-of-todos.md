@@ -125,9 +125,17 @@ Now that we have our component in scope, we will add it to the rendered content 
 
 React components are used just like HTML tags. The way you can tell a React component apart from an HTML tag is that React components must start with a capital letter, otherwise JSX will not render your app correctly. You can read a little more about this here: https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized
 
+After putting the `Todos` component in our app, you should see the "Hello, world!" text right above the list of todos. After this step, your app should look like this:
+
+![](screenshots/step03--01.png)
+
 [**Changes for Part 2** (e10f662)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/e10f662f3f7215c18f8563747463aaa8830de739)
 
 ## Part 3 - Moving the HTML into our component
+
+
+
+[**Changes for Part 3** (12d29a9)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/12d29a96ae28618db1d1ef951fcab1b3e645631f)
 
 ## Part 4 - Rendering a list
 
