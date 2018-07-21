@@ -62,12 +62,16 @@ export default App;
 
 After deleting those three lines, you should be back to compiling successfully again.
 
+[**Changes for Part 1** (8dfc2f3)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/8dfc2f33c71e13821cd806cdb24e66cdf1fa7831)
+
 ## Part 2 - Adding TodoMVC assests
 
 Now we are going to get started working with TodoMVC. First, copy the CSS for the app to replace the contents of `src/index.css`. You can find the CSS file here: https://raw.githubusercontent.com/tastejs/todomvc-app-css/master/index.css
 
 As a small finishing touch, replace `public/favicon.ico` with the TodoMVC favicon found here: https://raw.githubusercontent.com/tastejs/todomvc/1.3.0/site-assets/favicon.ico
 You can right click on the image and use "Save as..." to replace the icon. You may need to hard-refresh your browser to see the icon change. If you have trouble getting it to change, don't fret. It will be correct when you deploy the app.
+
+[**Changes for Part 2** (a1d1423)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/a1d1423f42399deb7e1fead0ecec395ab655f292)
 
 ## Part 3 - Putting the static HTML into our app
 
@@ -167,10 +171,10 @@ After you are done with this step, the app should look like this:
 
 ![Screnshot of the application after step 2](screenshots/step02--01.png)
 
+[**Changes for Part 3** (a839173)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/a839173ff7c617b68bb7803649b204dfea9b6a15)
+
 ---
 
-### Changes made in Step 2
-- [All Changes](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/compare/before-2...after-2) 
-- Part 1: [8dfc2f3](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/8dfc2f33c71e13821cd806cdb24e66cdf1fa7831)
-- Part 2: [a1d1423](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/a1d1423f42399deb7e1fead0ecec395ab655f292)
-- Part 3: [a839173](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/a839173ff7c617b68bb7803649b204dfea9b6a15)
+## Changes made in Step 2
+
+[View diff for changes in Step 2](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/compare/before-2...after-2)
