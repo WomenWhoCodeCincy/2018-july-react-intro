@@ -18,3 +18,4 @@ While each application step has changes in this GitHub repo, I have not finished
   - [Part 3 - Putting the static HTML into our app](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-02--static-html.md#part-3---putting-the-static-html-into-our-app)
 - [Step 3 - Rendering a list of Todos](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md)
   - [Part 1 - Building our first component](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-1---building-our-first-component)
+  - [Part 2 - Using the component](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-2---using-the-component)

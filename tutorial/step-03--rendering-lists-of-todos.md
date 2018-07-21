@@ -1,6 +1,7 @@
 # Step 3 - Rendering a list of Todos
 
 - [Part 1 - Building our first component](#part-1---building-our-first-component)
+- [Part 2 - Using the component](#part-2---using-the-component)
 
 ## Part 1 - Building our first component
 
@@ -89,11 +90,42 @@ export default class Todos extends Component {
 
 This does exactly the same thing, and there is no significant benefit of using one version over the other. As a matter of habit and personal taste, I always use the separate export statement and that is what you will see in this tutorial.
 
-*Changes for Part 1* [dc98b65](https://githb.com/WomenWhoCodeCincy/2018-july-react-intro/commit/dc98b650672b0e2f73d8f2b64c5517fbf79ccd3f)
+[**Changes for Part 1** (dc98b65)](https://githb.com/WomenWhoCodeCincy/2018-july-react-intro/commit/dc98b650672b0e2f73d8f2b64c5517fbf79ccd3f)
 
 ## Part 2 - Using the component
 
-Now, we have a component for just the list, but we need to use it to be able to see our changes.
+Now, we have a component for just the list, but we need to use it in our app to be able to see our changes. To start, open up `/src/App.js` and import our component:
+
+#### `/src/App.js`
+
+```jsx
+import React, { Component } from 'react';
+
+import Todos from './Todos';
+
+class App extends Component {
+...
+```
+
+The `./` at the beginning of the import path denotes that we want to reference a local file instead of an installed module like `react`. Specifying the file extension is not required when importing local modules, Webpack will infer it for you.
+
+Now that we have our component in scope, we will add it to the rendered content of the App component.
+
+#### `/src/App.js`
+
+```jsx
+<section className="main">
+  <input id="toggle-all" className="toggle-all" type="checkbox" />
+  <label htmlFor="toggle-all">Mark all as complete</label>
+
+  <Todos />
+  <ul className="todo-list">
+...
+```
+
+React components are used just like HTML tags. The way you can tell a React component apart from an HTML tag is that React components must start with a capital letter, otherwise JSX will not render your app correctly. You can read a little more about this here: https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized
+
+[**Changes for Part 2** (e10f662)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/e10f662f3f7215c18f8563747463aaa8830de739)
 
 ## Part 3 - Moving the HTML into our component
 
