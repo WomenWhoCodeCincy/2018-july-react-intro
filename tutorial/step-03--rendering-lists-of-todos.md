@@ -4,6 +4,7 @@
 - [Part 2 - Using the component](#part-2---using-the-component)
 - [Part 3 - Moving the HTML into our component](#part-3---moving-the-html-into-our-component))
 - [Part 4 - Rendering a list](#part-4---rendering-a-list)
+- [Part 5 - The key prop](#part-5---the-key-prop)
 
 ## Part 1 - Building our first component
 
@@ -265,6 +266,65 @@ If you want to prove to yourself that we are rendering the list passed in, chang
 [**Changes for Part 4** (23abc8b)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/23abc8beab5a9612b393b701c0cc0baa21c77f56)
 
 ## Part 5 - The `key` prop
+
+There is one small addition we need to make to our list rendering code. If you open your developer console (Google "View developer console" with the name of your browser to find how to open it), you will see this error in our application (along with others, but this is our focus for now):
+
+![](screenshots/step03--04.png)
+
+I would recommend that you always keep your console open when working with Javascript in the browser. React provides a lot of helpful error messages to guide you while coding, and it would be a shame to miss out on them. It's a good way to catch subtle issues early.
+
+Back to the error itself. When rendering a list of Nodes from an array, each Node in that array *must have* an attribute `key` passed in. Furthermore, each value of `key` in the array *must be unique*. The `key` value helps React identify objects in arrays as they are reordered and modified.
+
+The first guess many people take, and often the fallback for lazy React developers, is to use the array index. 
+
+```jsx
+todos.map((todo, index) => (
+  <li key={index}>
+    ...
+  </li>
+))
+```
+
+That's definitely a unique value, but it does not help us identify elements as they are reordered, removed, or added in between. You can read more in depth about this issue [here](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) if you are interested. But for now, it looks like we need to have some kind of unique data on each of our todos.
+
+One idea could be to use the message of the todo, but that does not work if I am tracking daily chores that have repeating todos every day. A simple idea is to add an auto-incrementing id, like you see in databases. That is what we will use here.
+
+You will want to add unique ids to each object, and then add the `key` prop to the `<li>` Node. The resulting code looks like this:
+
+#### `/src/Todos.js`
+
+```jsx
+class Todos extends Component {
+  render() {
+    const todos = [
+      { id: 1 },
+      { id: 2 },
+      { id: 3 },
+    ];
+
+    return (
+      <ul className="todo-list">
+        {
+          todos.map((todo) => (
+            <li key={todo.id}>
+              <div className="view">
+                <input className="toggle" type="checkbox" />
+                <label>Buy a unicorn</label>
+                <button className="destroy"></button>
+              </div>
+              <input className="edit" value="Rule the web" />
+            </li>
+          ))
+        }
+      </ul>
+    );
+  }
+}
+```
+
+This gives us a value that uniquely identifies each object, and will stand up to us deleting and adding todos.
+
+[**Changes for Part 5** (263072e)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/263072e662824924c46956a7fc4fa19246225ca6)
 
 ## Part 6 - Rendering Todo text
 
