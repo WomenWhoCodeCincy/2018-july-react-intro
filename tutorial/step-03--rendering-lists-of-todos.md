@@ -5,6 +5,7 @@
 - [Part 3 - Moving the HTML into our component](#part-3---moving-the-html-into-our-component))
 - [Part 4 - Rendering a list](#part-4---rendering-a-list)
 - [Part 5 - The key prop](#part-5---the-key-prop)
+- [Part 6 - Rendering Todo text](#part-6---rendering-todo-text)
 
 ## Part 1 - Building our first component
 
@@ -327,6 +328,41 @@ This gives us a value that uniquely identifies each object, and will stand up to
 [**Changes for Part 5** (263072e)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/263072e662824924c46956a7fc4fa19246225ca6)
 
 ## Part 6 - Rendering Todo text
+
+Now that we are rendering lists of todos, lets customize the text shown for each todo so we can tell them apart. We'll start with modifying our todo objects:
+
+#### `/src/Todos.js`
+
+```jsx
+const todos = [
+  {
+    id: 1,
+    message: "Buy a unicorn",
+  },
+  {
+    id: 2,
+    message: "Build a todo app in React",
+  },
+  {
+    id: 3,
+    message: "Celebrate!",
+  },
+];
+```
+
+Then update the "Buy a unicorn" text in the `<li>` node, and replace it with our todo messages:
+
+```jsx
+<label>{todo.message}</label>
+```
+
+With these simple changes, we have added pretty significant functionality. Hopefully that makes the subtle changes from before feel more powerful. 
+
+If you are following along at home, your app should look like this now.
+
+![](screenshots/step03--05.png)
+
+[**Changes for Part 6** (5e94ad9)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/5e94ad9a106359a23e3044ef426547be0162a58b)
 
 ## Part 7 - Rendering Todo completion state
 
