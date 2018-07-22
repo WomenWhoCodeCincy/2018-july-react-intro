@@ -2,6 +2,7 @@
 
 - [Part 1 - Building our first component](#part-1---building-our-first-component)
 - [Part 2 - Using the component](#part-2---using-the-component)
+- [Part 3 - Moving the HTML into our component](#part-3---moving-the-html-into-our-component))
 
 ## Part 1 - Building our first component
 
@@ -133,7 +134,63 @@ After putting the `Todos` component in our app, you should see the "Hello, world
 
 ## Part 3 - Moving the HTML into our component
 
+While it's awesome that we have our own component in the app, it should probably do something more useful. You might have guessed by the name of the component, it is intended to render the list of todos.
 
+One of my favorite ways to refactor out a component in a static mockup is to make it look like nothing changed. This helps me make small, incremental changes, and makes it a bit easier to notice what change is causing an issue. With that in mind, we will move the `<ul>` list from App.js to Todos.js.
+
+Moving the todo list to Todos.js...
+
+#### `/src/Todos.js`
+
+```jsx
+class Todos extends Component {
+  render() {
+    return (
+      <ul className="todo-list">
+        {/* These are here just to show the structure of the list items */}
+        {/* List items should get the class `editing` when editing and `completed` when marked as completed */}
+        <li className="completed">
+          <div className="view">
+            <input className="toggle" type="checkbox" checked />
+            <label>Taste JavaScript</label>
+            <button className="destroy"></button>
+          </div>
+
+          <input className="edit" value="Create a TodoMVC template" />
+        </li>
+
+        <li>
+          <div className="view">
+            <input className="toggle" type="checkbox" />
+            <label>Buy a unicorn</label>
+            <button className="destroy"></button>
+          </div>
+          <input className="edit" value="Rule the web" />
+        </li>
+      </ul>
+    );
+  }
+}
+```
+
+And removing them from App.js...
+
+#### `/src/App.js`
+
+```jsx
+<section className="main">
+  <input id="toggle-all" className="toggle-all" type="checkbox" />
+  <label htmlFor="toggle-all">Mark all as complete</label>
+
+  <Todos />
+</section>
+```
+
+Which should result in something that looks like this:
+
+![](screenshots/step03--02.png)
+
+We're back to where we started... but I promise this is great progress! We are set up for success in rendering the list from here.
 
 [**Changes for Part 3** (12d29a9)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/12d29a96ae28618db1d1ef951fcab1b3e645631f)
 
