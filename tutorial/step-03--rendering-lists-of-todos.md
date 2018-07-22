@@ -3,6 +3,7 @@
 - [Part 1 - Building our first component](#part-1---building-our-first-component)
 - [Part 2 - Using the component](#part-2---using-the-component)
 - [Part 3 - Moving the HTML into our component](#part-3---moving-the-html-into-our-component))
+- [Part 4 - Rendering a list](#part-4---rendering-a-list)
 
 ## Part 1 - Building our first component
 
@@ -195,6 +196,73 @@ We're back to where we started... but I promise this is great progress! We are s
 [**Changes for Part 3** (12d29a9)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/12d29a96ae28618db1d1ef951fcab1b3e645631f)
 
 ## Part 4 - Rendering a list
+
+Now we can just focus on the Todos.js file for a little bit. It's just static HTML at the moment. It would be nice if we could dynamically render the list of todos based on some Javascript data. Let's tackle that next.
+
+To get started with rendering based off of data, especially data we do not have yet, it is often easiest to start with a constant. This lets us work with data without worrying about where we are getting it from and how it is coming into the component. We can add it straight into the render function like this:
+
+#### `/src/Todos.js`
+
+```jsx
+render() {
+  const todos = [
+    {},
+    {},
+    {},
+  ];
+
+  return (
+    ...
+```
+
+This gives us an array of objects to work with. `const` is new ES6 syntax for a `var` that cannot be reassigned [(see MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const). It might strike you as odd that all of these objects are empty. We only want to focus on rendering a list, not details of the model we want to use for our todos, so they will get fleshed out as we go on.
+
+Now that we have an array, let's see how to render it. Similar to how we return a JSX Node from our `render` functions, we can also return an array of Nodes to render. This array can be a value of our JSX expression inside of curly brackets. To turn an array of objects into an array of nodes, we will use the `map` function like this:
+
+```jsx
+array.map((message) => <div>{text}</div>)
+```
+
+Understanding how the `map` function works is essential to being proficient in React, as it is the main way we render lists to the DOM. If you want to learn more, please [see MDN here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+
+In our case, we will want to map over one of the mocked up todos to render them like a list. It should look something like this:
+
+#### `/src/Todos.js`
+
+```jsx
+class Todos extends Component {
+  render() {
+    const todos = [
+      {},
+      {},
+      {},
+    ];
+
+    return (
+      <ul className="todo-list">
+        {
+          todos.map((todo) => (
+            <li>
+              <div className="view">
+                <input className="toggle" type="checkbox" />
+                <label>Buy a unicorn</label>
+                <button className="destroy"></button>
+              </div>
+              <input className="edit" value="Rule the web" />
+            </li>
+          ))
+        }
+      </ul>
+    );
+  }
+}
+```
+
+If you want to prove to yourself that we are rendering the list passed in, change how many objects are in the array and watch the page change. Pretty cool! With three objects, your app should look like this:
+
+![](screenshots/step03--03.png)
+
+[**Changes for Part 4** (23abc8b)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/23abc8beab5a9612b393b701c0cc0baa21c77f56)
 
 ## Part 5 - The `key` prop
 

@@ -20,3 +20,4 @@ While each application step has changes in this GitHub repo, I have not finished
   - [Part 1 - Building our first component](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-1---building-our-first-component)
   - [Part 2 - Using the component](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-2---using-the-component)
   - [Part 3 - Moving the HTML into our component](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-3---moving-the-html-into-our-component)
+  - [Part 4 - Rendering a list](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-4---rendering-a-list)
