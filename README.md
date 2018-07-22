@@ -23,3 +23,4 @@ While each application step has changes in this GitHub repo, I have not finished
   - [Part 4 - Rendering a list](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-4---rendering-a-list)
   - [Part 5 - The key prop](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-5---the-key-prop)
   - [Part 6 - Rendering Todo text](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-6---rendering-todo-text)
+  - [Part 7 - Rendering Todo completion state](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/blob/master/tutorial/step-03--rendering-lists-of-todos.md#part-7---rendering-todo-completion-state)

@@ -6,6 +6,7 @@
 - [Part 4 - Rendering a list](#part-4---rendering-a-list)
 - [Part 5 - The key prop](#part-5---the-key-prop)
 - [Part 6 - Rendering Todo text](#part-6---rendering-todo-text)
+- [Part 7 - Rendering Todo completion state](#part-7---rendering-todo-completion-state)
 
 ## Part 1 - Building our first component
 
@@ -352,6 +353,8 @@ const todos = [
 
 Then update the "Buy a unicorn" text in the `<li>` node, and replace it with our todo messages:
 
+#### `/src/Todos.js`
+
 ```jsx
 <label>{todo.message}</label>
 ```
@@ -365,5 +368,67 @@ If you are following along at home, your app should look like this now.
 [**Changes for Part 6** (5e94ad9)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/5e94ad9a106359a23e3044ef426547be0162a58b)
 
 ## Part 7 - Rendering Todo completion state
+
+Next, we'll continue with adding more functionality to the todo component. You might remember from the HTML mockup that some todos were crossed out, representing that it is complete. Like this last part, we will start with adding the complete state to the model:
+
+#### `/src/Todos.js`
+
+```jsx
+const todos = [
+  {
+    id: 1,
+    isComplete: true,
+    message: "Buy a unicorn",
+  },
+  {
+    id: 2,
+    isComplete: false,
+    message: "Build a todo app in React",
+  },
+  {
+    id: 3,
+    isComplete: false,
+    message: "Celebrate!",
+  },
+];
+```
+
+This gives us data to work from. Next, we want to make the todos looked completed if the boolean is true. Looking at our original HTML mockup, we can see how we should make this happen:
+
+```html
+<!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+<li class="completed">
+  <div class="view">
+    <input class="toggle" type="checkbox" checked>
+    <label>Taste JavaScript</label>
+    <button class="destroy"></button>
+  </div>
+  <input class="edit" value="Create a TodoMVC template">
+</li>
+<li>
+  <div class="view">
+    <input class="toggle" type="checkbox">
+    <label>Buy a unicorn</label>
+    <button class="destroy"></button>
+  </div>
+  <input class="edit" value="Rule the web">
+</li>
+```
+
+So we need to make the class on the `<li>` element equal to `view` when `iscComplete` is false, and `completed` when `isComplete` is true. We can implement it this way:
+
+#### `/src/Todos.js`
+```jsx
+<li key={todo.id} className={todo.isComplete ? "completed" : "view"}>
+```
+
+This uses the somewhat obscure [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator), which ends up being very useful in React. It acts like a very compact `if/else` statement that works inside of JSX expressions, and is a very handy tool to have when working with React.
+
+![](screenshots/step03--06.png)
+
+
+Now the text is crossed out when a todo is completed. The checkbox is not working quite yet. We will handle that in Step 4 when we work on toggling the completeness state.
+
+[**Changes for Part 7** (35050d9)](https://github.com/WomenWhoCodeCincy/2018-july-react-intro/commit/35050d9e503fedf7c1dc64b5e8d13931e849099e)
 
 ## Part 8 - Making a Todo component
